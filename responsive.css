@@ -1,0 +1,119 @@
+/* 
+  Hariom Portfolio - Responsive Enhancements
+  Targets: Mobile, Tablet, Desktop, and Ultra-wide (3000px)
+*/
+
+/* Ultra Wide Screens (3000px+) */
+@media (min-width: 2500px) {
+    .container {
+        max-width: 2000px;
+    }
+    
+    html {
+        font-size: 22px;
+    }
+    
+    .hero h1 {
+        font-size: 8rem;
+    }
+    
+    .hero-image-wrapper {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+/* Large Desktops */
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Tablets & Small Desktops */
+@media (max-width: 1024px) {
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 8rem;
+    }
+    
+    .hero-content {
+        order: 2;
+    }
+    
+    .hero-image-container {
+        order: 1;
+    }
+    
+    .hero-btns {
+        justify-content: center;
+    }
+    
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .cs-hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .navbar {
+        width: 95%;
+        padding: 0 1rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+    
+    .hero-flex {
+        padding-top: 6rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .hero-image-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .cs-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .cs-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-btns .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

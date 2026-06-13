@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariom Kushwah | Web Designer Portfolio</title>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">Hariom<span>.</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="ri-moon-line"></i>
+            </button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <i class="ri-menu-3-line"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-flex">
+                <div class="hero-content">
+                    <span class="hero-tag" data-aos="fade-up">Available for Freelance</span>
+                    <h1 data-aos="fade-up" data-aos-delay="100">
+                        I'm Hariom,<br>
+                        <span>Web Designer</span>
+                    </h1>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        I am a quick learner, punctual and energetic designer dedicated to creating smooth, modern, and user-centric digital experiences.
+                    </p>
+                    <div class="hero-btns" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#projects" class="btn btn-primary">View My Work <i class="ri-arrow-right-up-line"></i></a>
+                        <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                    </div>
+                </div>
+                <div class="hero-image-container" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="hero-image-wrapper">
+                        <img src="https://picsum.photos/seed/hariom_profile/800/800" alt="Hariom Kushwah" referrerPolicy="no-referrer">
+                        <div class="hero-overlay">
+                            <a href="#contact" class="hire-btn">Hire Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>About Me</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="contact-wrapper">
+                <div class="about-content" data-aos="fade-right">
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        My strengths are that I am a quick learner, punctual and energetic. Whatever task I take up, I put my efforts to complete the task in time.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                        My goal is to achieve a higher position in a reputed company by leveraging my professional skills and continuously learning. I bridge the gap between aesthetics and functionality.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="https://linkedin.com" target="_blank" class="btn btn-outline"><i class="ri-linkedin-box-fill"></i> LinkedIn</a>
+                    </div>
+                </div>
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="skills-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="skill-item">
+                            <div class="skill-icon-glass"><i class="ri-code-box-line"></i></div>
+                            <h3>Clean Code</h3>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon-glass"><i class="ri-layout-masonry-line"></i></div>
+                            <h3>Modern UI</h3>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon-glass"><i class="ri-smartphone-line"></i></div>
+                            <h3>Responsive</h3>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon-glass"><i class="ri-flashlight-line"></i></div>
+                            <h3>Fast Performance</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Skills</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="skills-flex" data-aos="fade-up">
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML5" class="skill-img">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS3" class="skill-img">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968358.png" alt="Sass" class="skill-img">
+                    <span>Sass CSS</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Figma" class="skill-img">
+                    <span>Figma</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Photoshop" class="skill-img">
+                    <span>Photoshop</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2586/2586488.png" alt="App Design" class="skill-img">
+                    <span>App Design</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1157/1157109.png" alt="PSD to HTML" class="skill-img">
+                    <span>PSD to HTML</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Email" class="skill-img">
+                    <span>Email Templates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Live Projects</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-img">
+                        <img src="https://picsum.photos/seed/fusion/800/600" alt="Fusion24X7" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">CRM</span>
+                            <span class="tag">Workflow</span>
+                        </div>
+                        <h3>Fusion24X7</h3>
+                        <p>Smart CRM & Workflow Automation system designed for efficiency.</p>
+                        <div class="hero-btns" style="justify-content: flex-start; gap: 0.5rem;">
+                            <a href="fusion24x7.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Case Study</a>
+                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="https://picsum.photos/seed/nukkart/800/600" alt="Nukkart" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Shopping</span>
+                            <span class="tag">Android</span>
+                        </div>
+                        <h3>Nukkart Apk</h3>
+                        <p>A modern shopping application built for local commerce.</p>
+                        <div class="hero-btns" style="justify-content: flex-start; gap: 0.5rem;">
+                            <a href="nukkart.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Case Study</a>
+                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img">
+                        <img src="https://picsum.photos/seed/octo/800/600" alt="Octoquill" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Branding</span>
+                        </div>
+                        <h3>Octoquill</h3>
+                        <p>Creative writing and publishing platform with a unique UI.</p>
+                        <div class="hero-btns" style="justify-content: flex-start; gap: 0.5rem;">
+                            <a href="octoquill.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Case Study</a>
+                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-img">
+                        <img src="https://picsum.photos/seed/patel/800/600" alt="Patel Lab" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Figma</span>
+                        </div>
+                        <h3>Patel Lab & Clinic</h3>
+                        <p>Healthcare management system design and prototype.</p>
+                        <div class="hero-btns" style="justify-content: flex-start; gap: 0.5rem;">
+                            <a href="patel-lab.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Case Study</a>
+                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Work Experience</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-left">
+                    <span class="timeline-date">SEP 2024 - PRESENT</span>
+                    <div class="timeline-content">
+                        <h3>UI/UX Designer</h3>
+                        <h4>Agami Technologies</h4>
+                        <p>Leading design initiatives, creating user flows, and high-fidelity prototypes for enterprise applications.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <span class="timeline-date">2023 - 2024</span>
+                    <div class="timeline-content">
+                        <h3>Web Designer</h3>
+                        <h4>NxtLife Technologies</h4>
+                        <p>Focused on responsive web design, PSD to HTML conversion, and maintaining design consistency across projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Get In Touch</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's discuss your project</h3>
+                    <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <div>
+                                <strong>Email Me</strong>
+                                <p>hariom.designs23@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <div>
+                                <strong>Call Me</strong>
+                                <p>+91 9870071432</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ri-map-pin-line"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Morar, Gwalior (M.P.) 474006</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <form id="contact-form" class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your project" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message <i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="ri-github-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-behance-fill"></i></a>
+            </div>
+            <p>&copy; 2026 Hariom Kushwah. Built with passion.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
