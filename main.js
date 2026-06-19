@@ -137,3 +137,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+const lines = document.querySelectorAll(".grid-lines span");
+
+let lastScroll = window.scrollY;
+let hideTimer;
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.scrollY;
+    const diff = currentScroll - lastScroll;
+
+    lines.forEach((line, index) => {
+
+        const travel = currentScroll * 0.8 + (index * 150);
+
+        let position;
+
+        if (diff > 0) {
+            // Scroll Down
+            position = travel % window.innerHeight;
+        } else {
+            // Scroll Up
+            position = window.innerHeight - (travel % window.innerHeight);
+        }
+
+        line.style.setProperty(
+            "--glow-y",
+            `${position}px`
+        );
+
+        line.style.setProperty(
+            "--glow-opacity",
+            "1"
+        );
+    });
+
+    lastScroll = currentScroll;
+
+    clearTimeout(hideTimer);
+
+    hideTimer = setTimeout(() => {
+
+        lines.forEach(line => {
+            line.style.setProperty(
+                "--glow-opacity",
+                "0"
+            );
+        });
+
+    }, 120);
+});
