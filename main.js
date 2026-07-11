@@ -187,3 +187,11 @@ window.addEventListener("scroll", () => {
 
     }, 120);
 });
+document.addEventListener("DOMContentLoaded", () => {
+
+    lightGallery(document.getElementById("gallery-container"), {
+        speed:500,
+        plugins:[lgZoom]
+    });
+
+});
