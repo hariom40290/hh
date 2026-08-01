@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
-    
+
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateThemeIcon(currentTheme);
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.addEventListener('click', () => {
         const theme = document.documentElement.getAttribute('data-theme');
         const newTheme = theme === 'light' ? 'dark' : 'light';
-        
+
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextBtn = slider.querySelector('.next-btn');
         const prevBtn = slider.querySelector('.prev-btn');
         const dotsContainer = slider.querySelector('.slider-dots');
-        
+
         let currentIndex = 0;
-        
+
         // Create dots
         slides.forEach((_, i) => {
             const dot = document.createElement('div');
@@ -101,26 +101,26 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.addEventListener('click', () => goToSlide(i));
             dotsContainer.appendChild(dot);
         });
-        
+
         const dots = dotsContainer.querySelectorAll('.dot');
-        
+
         function updateDots() {
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === currentIndex);
             });
         }
-        
+
         function goToSlide(index) {
             currentIndex = index;
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
             updateDots();
         }
-        
+
         nextBtn.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % slides.length;
             goToSlide(currentIndex);
         });
-        
+
         prevBtn.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + slides.length) % slides.length;
             goToSlide(currentIndex);
@@ -190,8 +190,94 @@ window.addEventListener("scroll", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     lightGallery(document.getElementById("gallery-container"), {
-        speed:500,
-        plugins:[lgZoom]
+        speed: 500,
+        plugins: [lgZoom]
+    });
+    const galleryItems = document.querySelectorAll("#gallery-container a");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    const itemsPerClick = 10;
+    let visibleItems = itemsPerClick;
+
+    function updateGallery() {
+
+        galleryItems.forEach((item, index) => {
+
+            if (index < visibleItems) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+
+        });
+
+        if (visibleItems >= galleryItems.length) {
+            loadMoreBtn.style.display = "none";
+        } else {
+            loadMoreBtn.style.display = "inline-flex";
+        }
+
+    }
+
+    updateGallery();
+
+    loadMoreBtn.addEventListener("click", () => {
+
+        visibleItems += itemsPerClick;
+
+        updateGallery();
+
     });
 
 });
+
+const tabs = document.querySelectorAll(".project-tab");
+const cards = document.querySelectorAll(".project-card");
+
+function filterProjects(category) {
+
+    cards.forEach(card => {
+
+        const show =
+            category === "all" ||
+            card.dataset.category === category;
+
+        if (show) {
+
+            card.style.display = "block";
+
+            requestAnimationFrame(() => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+            });
+
+        } else {
+
+            card.style.opacity = "0";
+            card.style.transform = "translateY(40px)";
+
+            setTimeout(() => {
+                card.style.display = "none";
+            }, 250);
+
+        }
+
+    });
+
+}
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        tabs.forEach(btn => btn.classList.remove("active"));
+        tab.classList.add("active");
+
+        filterProjects(tab.dataset.filter);
+
+    });
+
+});
+
+// Default Filter
+filterProjects("all");
