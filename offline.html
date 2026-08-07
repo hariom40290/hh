@@ -295,38 +295,57 @@
     </div>
 
     <script>
+const reloadBtn = document.getElementById("reload");
+const loader = document.getElementById("loader");
+const status = document.getElementById("status");
 
-        const reloadBtn = document.getElementById("reload");
-        const loader = document.getElementById("loader");
-        const status = document.getElementById("status");
+// Home URL
+const HOME_URL = "/"; // Agar GitHub Pages me ho to "/repo-name/" kar dena
 
-        reloadBtn.onclick = () => {
+async function checkConnection() {
 
-            loader.style.display = "inline-block";
+    loader.style.display = "inline-block";
 
-            status.innerHTML = "Checking connection...";
+    status.innerHTML = "Checking connection...";
 
-            setTimeout(() => {
+    if (!navigator.onLine) {
+        loader.style.display = "none";
+        status.innerHTML = "Waiting for connection...";
+        return;
+    }
 
-                location.reload();
+    try {
 
-            }, 700);
-
-        };
-
-        window.addEventListener("online", () => {
-
-            status.innerHTML = "Connection Restored ✓";
-
-            setTimeout(() => {
-
-                location.href = "/";
-
-            }, 800);
-
+        // Server ko ping karo
+        await fetch(HOME_URL, {
+            method: "HEAD",
+            cache: "no-store"
         });
 
-    </script>
+        status.innerHTML = "Connection Restored ✓";
+
+        setTimeout(() => {
+            window.location.replace(HOME_URL);
+        }, 500);
+
+    } catch (e) {
+
+        loader.style.display = "none";
+        status.innerHTML = "Still Offline";
+
+    }
+
+}
+
+// Reload button
+reloadBtn.addEventListener("click", checkConnection);
+
+// Browser online event
+window.addEventListener("online", checkConnection);
+
+// Har 2 second me background me check
+setInterval(checkConnection, 2000);
+</script>
 
 </body>
 
