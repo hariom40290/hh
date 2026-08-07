@@ -45,6 +45,12 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.text-primary{
+    color: var(--primary);
+}
+.text-main{
+    color: var(--text-main);
+}
 /* Navbar Actions */
 .nav-actions {
     display: flex;
@@ -511,7 +517,7 @@ h4,
     display:block;
     padding:12px 22px;
     text-decoration:none;
-    color:#cbd5e1;
+    color:var(--text-main);
     font-weight:500;
     border-radius:30px;
     transition:.35s;
@@ -555,24 +561,6 @@ h4,
 .logo span {
     color: var(--primary);
 }
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-main);
-    font-weight: 600;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    transition: var(--transition);
-}
-.nav-links a:hover {
-    opacity: 1;
-    color: var(--primary);
-}
-
 .theme-toggle {
     background: none;
     border: none;
@@ -676,7 +664,7 @@ h4,
 .hero-btns {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .btn {
     padding: 1rem 2rem;
@@ -907,6 +895,9 @@ h4,
 }
 .project-info .hero-btns a {
     padding: .75rem 1.5rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
 }
 .project-info h3 {
     font-size: 1rem;
@@ -1086,6 +1077,7 @@ font-weight: 500;
 .contact-content small{
 color:var(--text-muted);
 font-size:12px;
+display: none;
 }
 .contact-arrow{
 width:40px;
@@ -1450,7 +1442,7 @@ footer,
     }
 }
 /* =========================
-   CASE STUDY SECTION
+   Explore <i class="ri-eye-line"></i> SECTION
 ========================= */
 .case-section {
     position: relative;

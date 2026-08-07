@@ -207,58 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-const tabs = document.querySelectorAll(".project-tab");
-const cards = document.querySelectorAll(".project-card");
-
-function filterProjects(category) {
-
-    cards.forEach(card => {
-
-        const show =
-            category === "all" ||
-            card.dataset.category === category;
-
-        if (show) {
-
-            card.style.display = "block";
-
-            requestAnimationFrame(() => {
-                card.style.opacity = "1";
-                card.style.transform = "translateY(0)";
-            });
-
-        } else {
-
-            card.style.opacity = "0";
-            card.style.transform = "translateY(40px)";
-
-            setTimeout(() => {
-                card.style.display = "none";
-            }, 250);
-
-        }
-
-    });
-
-}
-
-tabs.forEach(tab => {
-
-    tab.addEventListener("click", () => {
-
-        tabs.forEach(btn => btn.classList.remove("active"));
-        tab.classList.add("active");
-
-        filterProjects(tab.dataset.filter);
-
-    });
-
-});
-
-// Default Filter
-filterProjects("all");
-
-
 
 
 
