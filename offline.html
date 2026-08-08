@@ -107,10 +107,8 @@
         }
 
         .wifi {
-
             width: 110px;
             height: 110px;
-
             margin: auto auto 25px;
 
             border-radius: 50%;
@@ -120,11 +118,16 @@
             align-items: center;
 
             background: rgba(245, 158, 11, .08);
-
             border: 1px solid var(--border-dark);
 
             animation: pulse 2s infinite;
+        }
 
+        .wifi svg {
+            width: 58px;
+            height: 58px;
+            color: var(--primary);
+            display: block;
         }
 
         @keyframes pulse {
@@ -135,13 +138,6 @@
 
             }
 
-        }
-
-        .wifi i {
-
-            font-size: 55px;
-
-            color: var(--primary);
 
         }
 
@@ -266,7 +262,21 @@
     <div class="card">
 
         <div class="wifi">
-            <i class="ri-signal-wifi-off-line"></i>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2.7 8.2C8.1 3.8 15.9 3.8 21.3 8.2" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+
+                <path d="M5.8 11.7C9.4 8.8 14.6 8.8 18.2 11.7" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+
+                <path d="M9.2 15.2C10.8 14.1 13.2 14.1 14.8 15.2" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+
+                <circle cx="12" cy="18.5" r="1.2" fill="currentColor" />
+
+                <!-- Offline slash -->
+                <path d="M4 4L20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
         </div>
 
         <h1>No Internet Connection</h1>
@@ -293,57 +303,57 @@
     </div>
 
     <script>
-const reloadBtn = document.getElementById("reload");
-const loader = document.getElementById("loader");
-const status = document.getElementById("status");
+        const reloadBtn = document.getElementById("reload");
+        const loader = document.getElementById("loader");
+        const status = document.getElementById("status");
 
-// Home URL
-const HOME_URL = "/"; // Agar GitHub Pages me ho to "/repo-name/" kar dena
+        // Home URL
+        const HOME_URL = "/"; // Agar GitHub Pages me ho to "/repo-name/" kar dena
 
-async function checkConnection() {
+        async function checkConnection() {
 
-    loader.style.display = "inline-block";
+            loader.style.display = "inline-block";
 
-    status.innerHTML = "Checking connection...";
+            status.innerHTML = "Checking connection...";
 
-    if (!navigator.onLine) {
-        loader.style.display = "none";
-        status.innerHTML = "Waiting for connection...";
-        return;
-    }
+            if (!navigator.onLine) {
+                loader.style.display = "none";
+                status.innerHTML = "Waiting for connection...";
+                return;
+            }
 
-    try {
+            try {
 
-        // Server ko ping karo
-        await fetch(HOME_URL, {
-            method: "HEAD",
-            cache: "no-store"
-        });
+                // Server ko ping karo
+                await fetch(HOME_URL, {
+                    method: "HEAD",
+                    cache: "no-store"
+                });
 
-        status.innerHTML = "Connection Restored ✓";
+                status.innerHTML = "Connection Restored ✓";
 
-        setTimeout(() => {
-            window.location.replace(HOME_URL);
-        }, 500);
+                setTimeout(() => {
+                    window.location.replace(HOME_URL);
+                }, 500);
 
-    } catch (e) {
+            } catch (e) {
 
-        loader.style.display = "none";
-        status.innerHTML = "Still Offline";
+                loader.style.display = "none";
+                status.innerHTML = "Still Offline";
 
-    }
+            }
 
-}
+        }
 
-// Reload button
-reloadBtn.addEventListener("click", checkConnection);
+        // Reload button
+        reloadBtn.addEventListener("click", checkConnection);
 
-// Browser online event
-window.addEventListener("online", checkConnection);
+        // Browser online event
+        window.addEventListener("online", checkConnection);
 
-// Har 2 second me background me check
-setInterval(checkConnection, 2000);
-</script>
+        // Har 2 second me background me check
+        setInterval(checkConnection, 2000);
+    </script>
 
 </body>
 
