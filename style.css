@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@font-face {
+    font-family: "remixicon";
+    src: url("remixicon/fonts/remixicon.woff2") format("woff2"),
+         url("remixicon/fonts/remixicon.woff") format("woff"),
+         url("remixicon/fonts/remixicon.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="ri-"],
+[class*=" ri-"] {
+    font-family: "remixicon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
 :root {
     /* ===== Refined Dark Theme ===== */
     --primary: #F59E0B;          /* Premium Amber */
@@ -40,6 +58,7 @@
     --shadow-md: 0 12px 28px rgba(15,23,42,.08);
     --shadow-lg: 0 18px 42px rgba(15,23,42,.12);
 }
+
 .text-ellipsis {
     overflow: hidden;
     white-space: nowrap;
@@ -524,7 +543,7 @@ h4,
 }
 
 .nav-links a:hover{
-    color:#fff;
+    color:var(--text-main);
 }
 
 /* Active Link */
