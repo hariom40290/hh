@@ -18,7 +18,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
+function openMenu() {
+    navLinks.classList.add("active");
+    menuToggle.classList.add("active");
+
+    document.body.classList.add("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", "true");
+}
+
+function closeMenu() {
+    navLinks.classList.remove("active");
+    menuToggle.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+}
+
+menuToggle.addEventListener("click", () => {
+
+    if (navLinks.classList.contains("active")) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+
+});
+
+
+/* Close when clicking navigation link */
+navLinks.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        closeMenu();
+    });
+
+});
+
+
+/* Close with ESC */
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+        closeMenu();
+    }
+
+});
+
+
+/* Close if screen becomes desktop */
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 992) {
+        closeMenu();
+    }
+
+});
     
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');

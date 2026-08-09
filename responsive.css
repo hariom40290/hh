@@ -278,3 +278,279 @@ font-size:14px;
         grid-template-columns: 1fr;
     }
 }
+/* ================================
+   MOBILE NAVBAR
+================================ */
+
+@media (max-width: 992px) {
+
+    .navbar {
+        z-index: 1000;
+    }
+
+    /* ================================
+       MOBILE MENU BUTTON
+    ================================= */
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+width: 40px;
+    height: 40px;
+        border: 1px solid var(--glass-border);
+        border-radius: 50%;
+
+        background: var(--glass-bg);
+        color: var(--text-main);
+
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        transition: var(--transition);
+
+        position: relative;
+        z-index: 1002;
+    }
+
+    .menu-toggle:hover {
+        color: var(--primary);
+        border-color: var(--border-dark);
+        background: var(--bg-card);
+    }
+
+
+    /* ================================
+       NAV LINKS PANEL
+    ================================= */
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        width: min(360px, 85%);
+        height: calc(100vh - 3rem);
+
+        margin: 0;
+        padding: 110px 35px 40px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+
+        background: var(--bg-white);
+
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+
+        border-left: 1px solid var(--glass-border);
+
+        box-shadow: var(--shadow-lg);
+
+        transform: translateX(100%);
+        visibility: hidden;
+        opacity: 0;
+
+        transition:
+            transform 0.55s cubic-bezier(0.77, 0, 0.18, 1),
+            opacity 0.35s ease,
+            visibility 0.55s;
+
+        z-index: 1001;
+
+        border-radius: 0 1rem 1rem 0;
+    }
+
+
+    /* ================================
+       OPEN
+    ================================= */
+
+    .nav-links.active {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    /* ================================
+       LINKS
+    ================================= */
+
+    .nav-links li {
+        list-style: none;
+        width: 100%;
+
+        opacity: 0;
+        transform: translateX(35px);
+
+        transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+    /* ================================
+       STAGGER ANIMATION
+    ================================= */
+
+    .nav-links.active li:nth-child(2) {
+        transition-delay: 0.08s;
+    }
+
+    .nav-links.active li:nth-child(3) {
+        transition-delay: 0.12s;
+    }
+
+    .nav-links.active li:nth-child(4) {
+        transition-delay: 0.16s;
+    }
+
+    .nav-links.active li:nth-child(5) {
+        transition-delay: 0.20s;
+    }
+
+    .nav-links.active li:nth-child(6) {
+        transition-delay: 0.24s;
+    }
+
+    .nav-links.active li:nth-child(7) {
+        transition-delay: 0.28s;
+    }
+
+
+    /* ================================
+       NAV LINK
+    ================================= */
+
+    .nav-links li a {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        padding: 15px 18px;
+
+        border-radius: 12px;
+
+        font-size: 17px;
+        font-weight: 500;
+
+        color: var(--text-muted);
+
+        text-decoration: none;
+
+        transition: var(--transition);
+    }
+
+
+    /* Hover */
+
+    .nav-links li a:hover {
+        color: var(--text-main);
+
+        background: var(--border);
+    }
+
+
+    /* Active */
+
+    .nav-links li a.active {
+        color: var(--primary);
+
+        background: rgba(245, 158, 11, 0.10);
+
+        border: 1px solid var(--border);
+    }
+
+
+    /* ================================
+       DESKTOP INDICATOR HIDE
+    ================================= */
+
+    .nav-indicator {
+        display: none;
+    }
+
+
+    /* ================================
+       BACKDROP
+    ================================= */
+
+    .nav-links::before {
+        content: "";
+
+        position: fixed;
+        top: 0;
+        right: 100%;
+
+        width: 100vw;
+        height: calc(100vh - 3rem);
+
+        background: rgba(2, 6, 23, 0.55);
+
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+
+        opacity: 0;
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.4s ease,
+            visibility 0.4s ease;
+    }
+
+
+    .nav-links.active::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* ================================
+       MENU ICON ANIMATION
+    ================================= */
+
+    .menu-toggle i {
+        display: block;
+
+        transition:
+            transform 0.35s ease,
+            opacity 0.2s ease;
+    }
+
+    .menu-toggle.active i {
+        transform: rotate(90deg);
+    }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 576px) {
+
+    .nav-links {
+        width: 88%;
+        padding: 100px 24px 30px;
+    }
+
+    .nav-links li a {
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+}
