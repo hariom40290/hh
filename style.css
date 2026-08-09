@@ -1,4 +1,25 @@
 @font-face {
+    font-family: "Open Sans";
+    src: url("assets/fonts/PlusJakartaSans-VariableFont_wght.ttf")
+         format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf")
+         format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+* {
+    font-family: "Open Sans", sans-serif;
+}
+@font-face {
     font-family: "remixicon";
     src: url("remixicon/fonts/remixicon.woff2") format("woff2"),
          url("remixicon/fonts/remixicon.woff") format("woff"),
@@ -226,13 +247,13 @@
     border-color: var(--primary);
 }
 .next-card-img {
-    height: 200px;
-    overflow: hidden;
+    width: 100%;
+    padding: 24px 16px;
+    border-bottom: 1px dashed var(--border);
 }
 .next-card-img img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .next-card-info {
     padding: 1.5rem;
@@ -465,7 +486,6 @@ h2,
 h3,
 h4,
 .font-display {
-    font-family: 'Outfit', sans-serif;
     font-weight: 700;
 }
 .container {
@@ -543,7 +563,7 @@ h4,
 }
 
 .nav-links a:hover{
-    color:var(--text-main);
+    color:var(--primary);
 }
 
 /* Active Link */
@@ -683,7 +703,6 @@ h4,
 .hero-btns {
     display: flex;
     gap: 1rem;
-    justify-content: space-between;
 }
 .btn {
     padding: 1rem 2rem;
@@ -879,6 +898,7 @@ h4,
     object-fit: contain;
     border-radius: 1rem;
     transition: .3s ease;
+    filter: grayscale(1);
 }
 .project-count {
     position: absolute;
@@ -896,11 +916,9 @@ h4,
     z-index: 2;
     transition: .5s ease;
 }
-.project-card:hover .project-img {
-    padding: 0;
-}
 .project-card:hover img {
-    transform: scale(1.05) rotate(2deg);
+    filter: grayscale(0);
+    transform: translateY(20px) scale(1.05);
 }
 .project-info {
     padding: 1rem;
