@@ -55,13 +55,14 @@
     --border: rgba(245, 158, 11, 0.12);
     --border-dark: rgba(245, 158, 11, 0.28);
     /* Glass */
-    --glass-bg: rgba(2, 6, 23, 0.82);
+    --glass-bg: #252e3ed6;
     --glass-border: rgba(255, 255, 255, 0.06);
     /* Shadows */
     --shadow-sm: 0 6px 10px rgba(0, 0, 0, 0.12);
     --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.18);
     --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.28);
     --transition: all .4s cubic-bezier(.4, 0, .2, 1);
+    --text-stroke:rgba(255, 255, 255, 0.04);
 }
 
 /* ===== Light Theme ===== */
@@ -82,6 +83,7 @@
     --shadow-sm: 0 4px 10px rgba(15, 23, 42, .05);
     --shadow-md: 0 12px 28px rgba(15, 23, 42, .08);
     --shadow-lg: 0 18px 42px rgba(15, 23, 42, .12);
+     --text-stroke:rgb(0 0 0 / 4%);
 }
 
 .text-ellipsis {
@@ -1030,8 +1032,8 @@ h4,
     font-weight: 900;
     line-height: 1;
     color: transparent;
-    -webkit-text-stroke: 2px rgb(0 0 0 / 4%);
-    text-stroke: 2px rgb(0 0 0 / 4%);
+    -webkit-text-stroke: 2px var(--text-stroke);
+    text-stroke: 2px var(--text-stroke);
     font-family: "Poppins", sans-serif;
     pointer-events: none;
     user-select: none;
